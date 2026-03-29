@@ -22,12 +22,3 @@ This script records a timestamp, the current user, and system uptime into a text
 4. View the log: `cat ~/Documents/access_report.txt`
 
 ---
-
-## 📱 Nexus 7 Setup Tool
-**Location:** `setup/setup_dev_tools.sh`
-
-Automates the installation of ADB and Fastboot for working with Android devices on Lubuntu.
-
-**How to use:**
-1. Enter the folder: `cd setup`
-2. Run it: `bash setup_dev_tools.sh`
