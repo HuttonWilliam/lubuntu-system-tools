@@ -1,5 +1,5 @@
 #!/bin/bash
-# Title: Lubuntu System Dashboard
+# Title: sys-info.sh
 # Description: Quick glance at system health
 
 echo "------------------------------------------"
