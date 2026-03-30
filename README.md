@@ -20,6 +20,8 @@ This script records a timestamp, the current user, and system uptime into a text
 2. Give permission: `chmod +x logger.sh`
 3. Run it: `./logger.sh`
 4. View the log: `cat ~/Documents/access_report.txt`
+5. To give permission to all scripts at once:
+chmod +x scripts/*.sh
 
 ## Technical Notes
 [Lubuntu Official Site](https://lubuntu.me)
