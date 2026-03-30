@@ -1,6 +1,6 @@
 # Lubuntu System Tools 🛠️
 
-This repository contains custom Bash scripts I wrote to manage my Lubuntu workstation and old hardware like the Nexus 7.
+This repository contains custom Bash scripts I wrote to manage my Lubuntu workstation.
 
 ## 📂 Project Structure
 
