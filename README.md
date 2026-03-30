@@ -21,8 +21,9 @@ This script records a timestamp, the current user, and system uptime into a text
 3. Run it: `./logger.sh`
 4. View the log: `cat ~/Documents/access_report.txt`
 
-## Resources
+## Technical Notes
 [Lubuntu Official Site](https://lubuntu.me)
 
 [Ubuntu Discourse](https://discourse.ubuntu.com)
+Tested on: Lubuntu 24.04 LTS
 ---
