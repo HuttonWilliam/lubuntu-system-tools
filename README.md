@@ -157,7 +157,21 @@ chmod +x scripts/*.sh
 ```
 
 ---
+# Lubuntu System Tools (GFAF Edition)
+By William Hutton, President of the GFAF
 
+A collection of lightweight Bash scripts designed to optimize Lubuntu 24.04 for high-performance and older hardware.
+
+## Available Tools:
+* **disk-cleanup.sh**: Removes temporary files and clears APT caches to save space.
+* **backup-manager.sh**: Automates the backup of critical data.
+* **disk-usage.sh**: Provides a detailed analysis of storage consumption.
+* **service-manager.sh**: Manages startup services to minimize RAM usage.
+* **update-system.sh**: Streamlines the `sudo apt` update and upgrade process.
+* **sys-info.sh**: Quick diagnostic of system health and hardware stats.
+
+## License:
+This project is released under the MIT License.
 ## 💡 Tips
 
 - Use `--help` or `help` flags on any script for detailed information
