@@ -157,8 +157,8 @@ chmod +x scripts/*.sh
 ```
 
 ---
-# Lubuntu System Tools (GFAF Edition)
-By William Hutton, President of the GFAF
+# Lubuntu System Tools
+By William Hutton
 
 A collection of lightweight Bash scripts designed to optimize Lubuntu 24.04 for high-performance and older hardware.
 
