@@ -1,14 +1,24 @@
 #!/bin/bash
 
-# Backup manager script
+# Lubuntu Backup Manager
+# A lightweight tool to compress and save your Documents
 
 # Define variables
-BACKUP_DIR="/path/to/backup"
+BACKUP_DIR="$HOME/Backups"
+DATA_TO_BACKUP="$HOME/Documents" 
 BACKUP_FILE="$BACKUP_DIR/backup-$(date +'%Y-%m-%d').tar.gz"
 
-# Create backup
+# Create backup folder if it doesn't exist
 mkdir -p "$BACKUP_DIR"
-tar -czf "$BACKUP_FILE" /path/to/data
+
+echo "Starting System Backup..."
+echo "Target: $DATA_TO_BACKUP"
+
+# Create the compressed backup
+tar -czf "$BACKUP_FILE" "$DATA_TO_BACKUP"
 
 # Inform the user
-echo "Backup created at $BACKUP_FILE"
+echo "-----------------------------------"
+echo "Success! Backup created at: $BACKUP_FILE"
+echo "Size: $(du -h "$BACKUP_FILE" | cut -f1)"
+echo "-----------------------------------"
