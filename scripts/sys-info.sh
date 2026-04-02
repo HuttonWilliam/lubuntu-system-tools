@@ -1,27 +1,16 @@
 #!/bin/bash
-# Title: Lubuntu System Dashboard
-# Description: Quick glance at system health
+set -e
 
-echo "------------------------------------------"
-echo "🖥️  LUBUNTU SYSTEM DASHBOARD"
-echo "------------------------------------------"
+echo "--- 🖥️ LUBUNTU SYSTEM DASHBOARD ---"
 
-# Show current Date and Time
-echo "📅 Date: $(date)"
+echo "--- 💿 DISK & STORAGE TOPOLOGY ---"
+# This shows all connected disks (Issue fix!)
+lsblk -p -o NAME,SIZE,TYPE,MOUNTPOINT
 
-# Show how long the computer has been on
-echo "⏱️  Uptime: $(uptime -p)"
+echo ""
+echo "--- 📊 MEMORY USAGE ---"
+free -h
 
-# Show Memory (RAM) usage
-echo "🧠 Memory Usage:"
-free -h | grep Mem | awk '{print "   Used: " $3 " / Total: " $2}'
-
-# Show Disk Space
-echo "💾 Disk Space:"
-df -h / | grep / | awk '{print "   Available: " $4 " on system drive"}'
-
-# Show Battery (Great for laptops!)
-echo "🔋 Battery:"
-upower -i $(upower -e | grep 'BAT') | grep -E "state|percentage" | awk '{print "   " $0}'
-
-echo "------------------------------------------"
+echo ""
+echo "--- 📅 UPTIME ---"
+uptime -p
