@@ -1,24 +1,33 @@
 #!/bin/bash
+# Exit immediately if a command exits with a non-zero status
+set -e 
 
 # Lubuntu Backup Manager
-# A lightweight tool to compress and save your Documents
+# Improved version addressing GitHub Issue #1 and #6
 
-# Define variables
+# Define variables - Now backing up the entire HOME folder
 BACKUP_DIR="$HOME/Backups"
-DATA_TO_BACKUP="$HOME/Documents" 
-BACKUP_FILE="$BACKUP_DIR/backup-$(date +'%Y-%m-%d').tar.gz"
+SOURCE_DATA="$HOME" 
 
 # Create backup folder if it doesn't exist
 mkdir -p "$BACKUP_DIR"
 
 echo "Starting System Backup..."
-echo "Target: $DATA_TO_BACKUP"
+echo "Source: $SOURCE_DATA"
+echo "Destination: $BACKUP_DIR"
 
-# Create the compressed backup
-tar -czf "$BACKUP_FILE" "$DATA_TO_BACKUP"
+# Using rsync to sync the Home folder
+# -a: Archive mode (preserves permissions)
+# -v: Verbose (shows progress)
+# --delete: Removes files in backup that were deleted in Source
+# --exclude: Don't backup trash or temporary cache files
+rsync -av --delete \
+  --exclude='.cache' \
+  --exclude='.local/share/Trash' \
+  --exclude='Backups' \
+  "$SOURCE_DATA/" "$BACKUP_DIR/"
 
-# Inform the user
 echo "-----------------------------------"
-echo "Success! Backup created at: $BACKUP_FILE"
-echo "Size: $(du -h "$BACKUP_FILE" | cut -f1)"
+echo "Success! Backup synced to: $BACKUP_DIR"
+echo "Total Backup Size: $(du -sh "$BACKUP_DIR" | cut -f1)"
 echo "-----------------------------------"
