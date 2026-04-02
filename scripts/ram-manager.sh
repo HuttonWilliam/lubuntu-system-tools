@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Lubuntu RAM Manager
 # Identifies memory hogs and clears system cache
