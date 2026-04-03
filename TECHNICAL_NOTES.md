@@ -1,8 +1,3 @@
-To keep it simple and professional, just add this Technical Notes section to the very bottom of your README.md. It explains the "why" behind your code for anyone (like the Lubuntu Council) who reviews it.
-
-Copy and paste this at the end of your file:
-
-Markdown
 ## ⚙️ Technical Notes
 
 ### 🛠️ Design Philosophy
