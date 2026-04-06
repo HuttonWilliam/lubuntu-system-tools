@@ -134,6 +134,61 @@ sudo ./service-manager.sh disable cups
 ./service-manager.sh help      # Show help
 ```
 
+### 🔋 Battery Health Monitor
+**Location:** `scripts/battery-monitor.sh`
+
+Monitor battery health, charge status, and power usage on laptops.
+
+**Features:**
+- Display current battery percentage and status (charging/discharging/full)
+- Show battery health (capacity vs design capacity) with degradation warnings
+- Estimate time to full charge or time remaining
+- Monitor charge cycles, manufacturer info, and battery technology
+- Power consumption analysis (current draw / watt usage)
+- Display battery temperature (requires lm-sensors)
+- Option to enable/disable power-saving mode (via TLP or cpufreq)
+- Colorized output for easy reading
+- Real-time monitoring mode
+
+**How to use:**
+```bash
+chmod +x battery-monitor.sh
+./battery-monitor.sh                 # Show current battery status
+./battery-monitor.sh --health        # Show detailed health info
+./battery-monitor.sh --powersave on  # Enable power-saving mode
+./battery-monitor.sh --watch         # Monitor battery in real-time
+./battery-monitor.sh --help          # Show help
+```
+
+### ⚡ System Performance Optimizer
+**Location:** `scripts/performance-tuner.sh`
+
+Optimize system performance and resource usage on Lubuntu.
+
+**Features:**
+- Display current system performance metrics (CPU, memory, I/O, load)
+- Optimize CPU governor (schedutil/ondemand for balanced performance)
+- Manage swappiness settings (lower = less swap usage)
+- Clear memory caches safely
+- Optimize I/O scheduler per block device
+- Audit and suggest disabling unnecessary background services
+- Generate detailed performance report saved to /tmp
+- Restore default settings option
+- Dry-run mode to preview changes safely
+
+**How to use:**
+```bash
+chmod +x performance-tuner.sh
+./performance-tuner.sh                   # Show current performance stats
+./performance-tuner.sh --optimize        # Run optimization
+./performance-tuner.sh --report          # Generate performance report
+./performance-tuner.sh --cpu powersave   # Change CPU governor
+./performance-tuner.sh --swap 10         # Set swappiness to 10
+./performance-tuner.sh --reset           # Restore default settings
+./performance-tuner.sh --dry-run --optimize  # Preview optimizations
+./performance-tuner.sh --help            # Show help
+```
+
 ---
 
 ## 🚀 Quick Start
@@ -169,6 +224,8 @@ A collection of lightweight Bash scripts designed to optimize Lubuntu 24.04 for 
 * **service-manager.sh**: Manages startup services to minimize RAM usage.
 * **update-system.sh**: Streamlines the `sudo apt` update and upgrade process.
 * **sys-info.sh**: Quick diagnostic of system health and hardware stats.
+* **battery-monitor.sh**: Monitors battery health, charge status, and power usage on laptops.
+* **performance-tuner.sh**: Optimizes system performance (CPU governor, swappiness, I/O scheduler).
 
 ## License:
 This project is released under the MIT License.
