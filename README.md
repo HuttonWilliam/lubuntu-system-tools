@@ -136,6 +136,59 @@ sudo ./service-manager.sh disable cups
 
 ---
 
+## 🤖 Automation Setup
+
+Automate your system maintenance with the included setup scripts.
+
+### Option 1 – Cron Jobs (traditional)
+
+```bash
+chmod +x setup/install-cron.sh
+./setup/install-cron.sh            # Interactive setup
+./setup/install-cron.sh --list     # List current cron jobs
+./setup/install-cron.sh --remove   # Remove all lubuntu cron jobs
+./setup/install-cron.sh --help     # Show help
+```
+
+### Option 2 – Systemd Timers (modern)
+
+```bash
+chmod +x setup/install-systemd-timers.sh
+./setup/install-systemd-timers.sh            # Interactive setup
+./setup/install-systemd-timers.sh --status   # Show timer status
+./setup/install-systemd-timers.sh --remove   # Remove all timers
+```
+
+### Option 3 – Master Maintenance Script
+
+Run all critical tasks in one command:
+
+```bash
+chmod +x scripts/auto-maintenance.sh
+./scripts/auto-maintenance.sh              # Run all maintenance tasks
+./scripts/auto-maintenance.sh --dry-run    # Preview what will happen
+./scripts/auto-maintenance.sh --backup     # Run only backup
+./scripts/auto-maintenance.sh --cleanup    # Run only cleanup
+./scripts/auto-maintenance.sh --update     # Run only system update
+./scripts/auto-maintenance.sh --help       # Show help
+```
+
+### Recommended Schedules
+
+| Script | Frequency | Method |
+|--------|-----------|--------|
+| `backup-manager.sh` | Daily at 2 AM | Cron or systemd timer |
+| `disk-cleanup.sh` | Weekly (Sunday 3 AM) | Cron or systemd timer |
+| `update-system.sh` | Daily at midnight | Cron or systemd timer |
+| `sys-info.sh` | Hourly | Cron or systemd timer |
+| `auto-maintenance.sh` | Weekly | Cron or systemd timer |
+
+Log files are written to `/var/log/lubuntu-tools/`.
+
+See [AUTOMATION_GUIDE.md](AUTOMATION_GUIDE.md) for the full guide including cron syntax, systemd timer concepts, log monitoring, and troubleshooting.
+
+---
+
 ## 🚀 Quick Start
 
 1. Clone this repository:
@@ -146,7 +199,7 @@ cd lubuntu-system-tools
 
 2. Make all scripts executable:
 ```bash
-chmod +x scripts/*.sh
+chmod +x scripts/*.sh setup/*.sh
 ```
 
 3. Use any script:
@@ -154,6 +207,13 @@ chmod +x scripts/*.sh
 ./scripts/disk-cleanup.sh --help
 ./scripts/backup-manager.sh create
 ./scripts/disk-usage.sh
+```
+
+4. Set up automation:
+```bash
+./setup/install-cron.sh       # Set up cron jobs
+# or
+./setup/install-systemd-timers.sh  # Set up systemd timers
 ```
 
 ---
