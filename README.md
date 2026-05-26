@@ -201,5 +201,3 @@ This architecture is deployed and open-sourced under the terms of the **MIT Lice
 *Tested and certified for Lubuntu 24.04 LTS environments.* *References: [Lubuntu Official](https://lubuntu.me) | [Ubuntu Discourse*](https://discourse.ubuntu.com)
 
 ```
-© 2026 William Hutton. All rights reserved.
-```
