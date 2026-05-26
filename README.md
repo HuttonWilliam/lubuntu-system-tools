@@ -1,14 +1,3 @@
-Your repository has grown into a seriously impressive toolkit! Looking at your actual file list, you have added three major new scripts that aren’t even mentioned in your old `README.md`:
-
-1. `optimize-boot.sh` (The GRUB tweak we just built!)
-2. `Wi-Fi-Buffer-Fix.sh`
-3. `ram-manager.sh`
-4. Plus, the structure at the bottom of your file was duplicating itself.
-
-Here is a completely refreshed, highly professional, and up-to-date **`README.md`** that organizes all your current files, documents the new scripts, and maintains your clean formatting.
-
----
-
 ```markdown
 # Lubuntu System Tools 🛠️
 
