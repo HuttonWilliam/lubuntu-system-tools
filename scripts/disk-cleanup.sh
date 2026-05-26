@@ -1,4 +1,12 @@
 #!/bin/bash
+# ========================================================================
+# Lubuntu System Tools - Boot Optimizer
+# Copyright (C) 2026 William Hutton
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License.
+# ========================================================================
 
 # Disk Cleanup Utility for Lubuntu
 # Removes temporary files, cache, logs, and reclaims disk space
