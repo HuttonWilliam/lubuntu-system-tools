@@ -13,4 +13,4 @@ The suite relies on standard Linux binaries usually pre-installed on Lubuntu:
 
 ### 🐧 Compatibility
 * **Primary OS:** Lubuntu 24.04 LTS (Noble Numbat).
-* **Hardware:** Tested on Lenovo mobile hardware with 1.7GB usable RAM.
+* **Hardware:** Tested on Lenovo Laptop hardware with 1.7GB usable RAM.
