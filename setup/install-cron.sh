@@ -1,5 +1,12 @@
 #!/bin/bash
-
+# ========================================================================
+# Lubuntu System Tools - update-system
+# Copyright (C) 2026 William Hutton
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License.
+# ========================================================================
 # Lubuntu System Tools - Cron Job Installer
 # Sets up automated cron jobs for all system tools
 # Usage: ./install-cron.sh [--help] [--list] [--remove]
