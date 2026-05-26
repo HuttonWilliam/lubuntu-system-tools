@@ -1,6 +1,6 @@
 #!/bin/bash
 # ========================================================================
-# Lubuntu System Tools - Auto Maintenance Engine
+# Lubuntu System Tools - Auto Maintenance
 # Copyright (C) 2026 William Hutton
 # 
 # This program is free software: you can redistribute it and/or modify
