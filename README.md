@@ -194,7 +194,7 @@ chmod +x scripts/*.sh setup/*.sh
 
 ## 📜 License
 
-This architecture is deployed and open-sourced under the terms of the **MIT License**.
+This architecture is deployed and open-sourced under the terms of the **GNU General Public License v3.0 (GPLv3)**.
 
 ---
 
