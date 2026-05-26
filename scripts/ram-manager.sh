@@ -1,6 +1,6 @@
 #!/bin/bash
 # ========================================================================
-# Lubuntu System Tools - Boot Optimizer
+# Lubuntu System Tools - ram-manager
 # Copyright (C) 2026 William Hutton
 # 
 # This program is free software: you can redistribute it and/or modify
