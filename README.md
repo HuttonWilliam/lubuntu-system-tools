@@ -1,4 +1,6 @@
 ```markdown
+Copyright © 2026 William Hutton
+Licensed under the GNU General Public License v3.0 (GPLv3).
 # Lubuntu System Tools 🛠️
 
 This repository contains custom Bash scripts designed to optimize, monitor, and maintain Lubuntu workstations—tailored specifically for maximum performance, lower RAM usage, and faster boot times.
