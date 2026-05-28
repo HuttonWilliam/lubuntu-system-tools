@@ -208,34 +208,26 @@ interactive_setup() {
 
     declare -A SCRIPT_MAP
     SCRIPT_MAP=(
-        [1]="backup-manager.sh"
-        [2]="disk-cleanup.sh"
-        [3]="update-system.sh"
-        [4]="ram-manager.sh"
-        [5]="sys-info.sh"
-        [6]="auto-maintenance.sh"
+        [1]="backup-manager.sh" [2]="disk-cleanup.sh" [3]="update-system.sh"
+        [4]="ram-manager.sh" [5]="sys-info.sh" [6]="auto-maintenance.sh"
+        [7]="wifi-buffer-fix.sh" [8]="battery-monitor.sh" [9]="cpu-governor.sh"
+        [10]="fan-control.sh" [11]="network-optimizer.sh"
     )
 
     declare -A SUDO_MAP
     SUDO_MAP=(
-        [1]=false
-        [2]=true
-        [3]=true
-        [4]=false
-        [5]=false
-        [6]=true
+        [1]=false [2]=true [3]=true [4]=false [5]=false [6]=true
+        [7]=true [8]=false [9]=true [10]=true [11]=true
     )
 
     echo -e "${CYAN}Available scripts to automate:${NC}"
-    echo "  1) backup-manager.sh   - Automated home backup"
-    echo "  2) disk-cleanup.sh     - Remove temp files and cache (requires sudo)"
-    echo "  3) update-system.sh    - Update system packages (requires sudo)"
-    echo "  4) ram-manager.sh      - Monitor and manage RAM"
-    echo "  5) sys-info.sh         - Log system information"
-    echo "  6) auto-maintenance.sh - Run all maintenance tasks (requires sudo)"
-    echo "  7) All of the above"
+    echo "  1) backup-manager.sh      2) disk-cleanup.sh      3) update-system.sh"
+    echo "  4) ram-manager.sh         5) sys-info.sh          6) auto-maintenance.sh"
+    echo "  7) wifi-buffer-fix.sh     8) battery-monitor.sh   9) cpu-governor.sh"
+    echo " 10) fan-control.sh        11) network-optimizer.sh"
+    echo " 12) All of the above"
     echo "  0) Cancel"
-    echo -e "\nEnter numbers separated by spaces (e.g. '1 3 5'), or 7 for all:"
+    echo -e "\nEnter numbers separated by spaces (e.g. '1 3 5'), or 12 for all:"
     echo -n "  Your choice: "
     read -r selection
 
@@ -245,8 +237,8 @@ interactive_setup() {
     fi
 
     local selected_keys=()
-    if [ "$selection" = "7" ]; then
-        selected_keys=(1 2 3 4 5 6)
+    if [ "$selection" = "12" ]; then
+        selected_keys=(1 2 3 4 5 6 7 8 9 10 11)
     else
         read -ra selected_keys <<< "$selection"
     fi
