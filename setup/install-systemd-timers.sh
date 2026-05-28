@@ -1,3 +1,4 @@
+#!/bin/bash
 # ========================================================================
 # Lubuntu System Tools - update-system
 # Copyright (C) 2026 William Hutton
@@ -53,7 +54,7 @@ OPTIONS:
     --help     Show this help message
 
 EXAMPLES:
-    ./setup/install-systemd-timers.sh            # Interactive setup
+    ./setup/install-systemd-timers.sh         # Interactive setup
     ./setup/install-systemd-timers.sh --status   # Show timer status
     ./setup/install-systemd-timers.sh --remove   # Remove all timers
 
@@ -269,8 +270,8 @@ interactive_setup() {
     )
 
     echo -e "${CYAN}Available scripts to automate:${NC}"
-    echo "  1) backup-manager.sh      2) disk-cleanup.sh      3) update-system.sh"
-    echo "  4) ram-manager.sh         5) sys-info.sh          6) auto-maintenance.sh"
+    echo "  1) backup-manager.sh     2) disk-cleanup.sh     3) update-system.sh"
+    echo "  4) ram-manager.sh         5) sys-info.sh         6) auto-maintenance.sh"
     echo "  7) wifi-buffer-fix.sh     8) battery-monitor.sh   9) cpu-governor.sh"
     echo " 10) fan-control.sh        11) network-optimizer.sh"
     echo " 12) All of the above"
@@ -317,93 +318,12 @@ interactive_setup() {
     done
 
     echo -e "\n${GREEN}╔══════════════════════════════════════════════════╗${NC}"
-    printf "${GREEN}║  Setup Complete! Created %-2s timer(s).           ║${NC}\n" "$added"
+    printf "${GREEN}║  Setup Complete! Created %-2s timer(s).            ║${NC}\n" "$added"
     echo -e "${GREEN}╚══════════════════════════════════════════════════╝${NC}"
     echo
-    print_info "View timer status:   $0 --status"
-    print_info "Remove all timers:   $0 --remove"
-    print_info "View logs in:        $LOG_DIR/"
-    print_info "Tip: Run 'loginctl enable-linger \$USER' to allow timers to"
-    print_info "     run when you are not logged in."
-    echo
-}
-    declare -A DESC_MAP
-    DESC_MAP=(
-        [1]="Home Backup"
-        [2]="Disk Cleanup"
-        [3]="System Update"
-        [4]="RAM Manager"
-        [5]="System Info Logger"
-        [6]="Auto Maintenance"
-    )
-
-    declare -A SUDO_MAP
-    SUDO_MAP=(
-        [1]=false
-        [2]=true
-        [3]=true
-        [4]=false
-        [5]=false
-        [6]=true
-    )
-
-    echo -e "${CYAN}Available scripts to automate:${NC}"
-    echo "  1) backup-manager.sh   - Automated home backup"
-    echo "  2) disk-cleanup.sh     - Remove temp files and cache (requires sudo)"
-    echo "  3) update-system.sh    - Update system packages (requires sudo)"
-    echo "  4) ram-manager.sh      - Monitor and manage RAM"
-    echo "  5) sys-info.sh         - Log system information"
-    echo "  6) auto-maintenance.sh - Run all maintenance tasks (requires sudo)"
-    echo "  7) All of the above"
-    echo "  0) Cancel"
-    echo -e "\nEnter numbers separated by spaces (e.g. '1 3 5'), or 7 for all:"
-    echo -n "  Your choice: "
-    read -r selection
-
-    if [ "$selection" = "0" ]; then
-        print_info "Setup cancelled."
-        exit 0
-    fi
-
-    local selected_keys=()
-    if [ "$selection" = "7" ]; then
-        selected_keys=(1 2 3 4 5 6)
-    else
-        read -ra selected_keys <<< "$selection"
-    fi
-
-    local added=0
-    for key in "${selected_keys[@]}"; do
-        script_name="${SCRIPT_MAP[$key]}"
-        description="${DESC_MAP[$key]}"
-        needs_sudo="${SUDO_MAP[$key]}"
-
-        if [ -z "$script_name" ]; then
-            print_warning "Unknown selection: $key, skipping."
-            continue
-        fi
-
-        if [ ! -f "$SCRIPTS_DIR/$script_name" ]; then
-            print_warning "$script_name not found at $SCRIPTS_DIR/$script_name, skipping."
-            continue
-        fi
-
-        pick_calendar "$script_name"
-        create_unit_pair "$script_name" "$description" "$CALENDAR" "$needs_sudo" ""
-
-        local base="${script_name%.sh}"
-        local unit_name="${UNIT_PREFIX}-${base}"
-        enable_timer "$unit_name"
-        added=$((added + 1))
-    done
-
-    echo -e "\n${GREEN}╔══════════════════════════════════════════════════╗${NC}"
-    printf "${GREEN}║  Setup Complete! Created %-2s timer(s).           ║${NC}\n" "$added"
-    echo -e "${GREEN}╚══════════════════════════════════════════════════╝${NC}"
-    echo
-    print_info "View timer status:   $0 --status"
-    print_info "Remove all timers:   $0 --remove"
-    print_info "View logs in:        $LOG_DIR/"
+    print_info "View timer status:    $0 --status"
+    print_info "Remove all timers:    $0 --remove"
+    print_info "View logs in:         $LOG_DIR/"
     print_info "Tip: Run 'loginctl enable-linger \$USER' to allow timers to"
     print_info "     run when you are not logged in."
     echo
