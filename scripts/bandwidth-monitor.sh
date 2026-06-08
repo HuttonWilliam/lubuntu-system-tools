@@ -10,7 +10,7 @@
 
 set -e
 
-# Bandwidth Monitor for Lubuntu
+# Bandwidth Monitor for Lubuntu and other Ubuntu based OS
 # Real-time network usage monitoring, per-process bandwidth analysis, and historical logging
 # Usage: ./bandwidth-monitor.sh [OPTIONS]
 
