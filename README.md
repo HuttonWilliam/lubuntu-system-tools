@@ -200,6 +200,6 @@ This architecture is deployed and open-sourced under the terms of the **GNU Gene
 
 ---
 
-*Tested and certified for Lubuntu 24.04 LTS environments.* *References: [Lubuntu Official](https://lubuntu.me) | [Ubuntu Discourse*](https://discourse.ubuntu.com)
+*Tested and certified for Lubuntu 24.04 LTS & Lubuntu 26.04 environments.* *References: [Lubuntu Official](https://lubuntu.me) | [Ubuntu Discourse*](https://discourse.ubuntu.com)
 
 ```
