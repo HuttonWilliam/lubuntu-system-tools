@@ -1,7 +1,5 @@
 # Security Policy
 
-# Security Policy
-
 ## Supported Versions
 
 I currently support only the latest version of this project. Older versions do not receive security updates.
