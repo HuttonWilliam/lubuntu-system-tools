@@ -1,6 +1,4 @@
-# Security Policy
-
-## Reporting a Vulnerability
+# Reporting a Vulnerability
 
 If you believe you have found a security vulnerability in this project, please **do not open a public issue.**
 
