@@ -338,4 +338,4 @@ sudo visudo
 
 ---
 
-*Lubuntu System Tools — by William Hutton*
+*Lubuntu System Tools — ©️ 2026 William Hutton*
