@@ -165,9 +165,8 @@ To manually process all critical tasks (backup, cleanup, update) sequentially in
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/HuttonWilliam/lubuntu-system-tools.git](https://github.com/HuttonWilliam/lubuntu-system-tools.git)
+git clone https://github.com/HuttonWilliam/lubuntu-system-tools.git
 cd lubuntu-system-tools
-
 ```
 
 
