@@ -1,6 +1,9 @@
 name: Mirror to GitLab
 
-on: [push, delete]
+on:
+  push:
+  delete:
+  workflow_dispatch: # Allows you to trigger this manually anytime
 
 jobs:
   mirror:
