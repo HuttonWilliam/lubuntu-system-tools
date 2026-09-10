@@ -1,0 +1,17 @@
+name: Mirror to GitLab
+
+on: [push, delete]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror to GitLab
+        run: |
+          git remote add gitlab https://HuttonWilliam:${{ secrets.GITLAB_TOKEN }}@://gitlab.com
+          git push --prune gitlab "+refs/remotes/origin/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
