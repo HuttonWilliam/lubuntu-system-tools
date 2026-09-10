@@ -3,7 +3,7 @@ name: Mirror to GitLab
 on:
   push:
   delete:
-  workflow_dispatch: # Allows you to trigger this manually anytime
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -15,6 +15,8 @@ jobs:
           fetch-depth: 0
 
       - name: Mirror to GitLab
+        env:
+          GL_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab https://HuttonWilliam:${{ secrets.GITLAB_TOKEN }}@://gitlab.com
+          git remote add gitlab https://HuttonWilliam:$GL_TOKEN@://gitlab.com
           git push --prune gitlab "+refs/remotes/origin/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
