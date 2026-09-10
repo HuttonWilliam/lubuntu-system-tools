@@ -22,8 +22,8 @@ jobs:
           AUTH_HEADER=$(echo -n "HuttonWilliam:$GL_TOKEN" | base64 | tr -d '\n')
           
           # Configure git to use the auth header specifically for gitlab.com
-          git config --global http.https://gitlab.com "Authorization: Basic $AUTH_HEADER"
+          git config --global http.https://gitlab.com/.extraheader "Authorization: Basic $AUTH_HEADER"
           
           # Add the clean repository link and push everything across
-          git remote add gitlab https://gitlab.com
+          git remote add gitlab https://gitlab.com/HuttonWilliam/lubuntu-system-tools.git
           git push --prune gitlab "+refs/remotes/origin/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
