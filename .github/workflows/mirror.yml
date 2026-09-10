@@ -18,5 +18,12 @@ jobs:
         env:
           GL_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab https://HuttonWilliam:$GL_TOKEN@://gitlab.com
+          # Encode credentials to safely bypass special character URL parsing bugs
+          AUTH_HEADER=$(echo -n "HuttonWilliam:$GL_TOKEN" | base64 | tr -d '\n')
+          
+          # Configure git to use the auth header specifically for gitlab.com
+          git config --global http.https://gitlab.com "Authorization: Basic $AUTH_HEADER"
+          
+          # Add the clean repository link and push everything across
+          git remote add gitlab https://gitlab.com
           git push --prune gitlab "+refs/remotes/origin/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
